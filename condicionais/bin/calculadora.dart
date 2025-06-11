@@ -36,6 +36,5 @@ void main() {
     multiplicacao();
   } else {
     print('Opção inválida');
-  }
-  
+  }  
 }

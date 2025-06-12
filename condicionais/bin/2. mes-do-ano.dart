@@ -1,56 +1,44 @@
 import 'dart:io';
 
 void main() {
-  print('Digite um número, e recebera um mês do ano');
-  String? escolha = stdin.readLineSync();
+  print('Digite um número de 1 a 12 para saber o mês correspondente:');
+  String? input = stdin.readLineSync();
 
-  switch (escolha) {
-    case "1":
-      print('Janeiro');
-      break;
+  // Null safety e conversão de entrada
+  int numero = int.parse(input!);
 
-    case "2":
-      print('Fevereiro');
-      break;
-
-    case "3":
-      print('Março');
-      break;
-
-    case "4":
-      print('Abril');
-      break;
-
-    case "5":
-      print('Maio');
-      break;
-
-    case "6":
-      print('Junho');
-      break;
-
-    case "7":
-      print('Julho');
-      break;
-
-    case "8":
-      print('Agosto');
-      break;
-
-    case "9":
-      print('Setembro');
-      break;
-
-    case "10":
-      print('Outubro');
-      break;
-
-    case "11":
-      print('Novembro');
-      break;
-
-    case "12":
-      print('Dezembro');
-      break;
+  // Função que retorna o mês correspondente
+  String obterMes(int numero) {
+    switch (numero) {
+      case 1:
+        return 'Janeiro';
+      case 2:
+        return 'Fevereiro';
+      case 3:
+        return 'Março';
+      case 4:
+        return 'Abril';
+      case 5:
+        return 'Maio';
+      case 6:
+        return 'Junho';
+      case 7:
+        return 'Julho';
+      case 8:
+        return 'Agosto';
+      case 9:
+        return 'Setembro';
+      case 10:
+        return 'Outubro';
+      case 11:
+        return 'Novembro';
+      case 12:
+        return 'Dezembro';
+      default:
+        return 'Número inválido. Por favor, insira um número de 1 a 12.';
+    }
   }
+
+  String mes = obterMes(numero);
+  print(mes);
 }

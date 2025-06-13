@@ -43,11 +43,14 @@ void main() {
   }
 
   void getOperacao() {
-    print("Digite uma operação");
+    print("Digite uma operação ${operacoes.toString()}");
     entrada = stdin.readLineSync();
     if (entrada != null) {
       if (operacoes.contains(entrada)) {
         operacao = entrada!;
+      } else {
+        print("Operação inválida. Tente novamente.");
+        getOperacao(); // Chama a função recursivamente até que uma operação válida seja inserida
       }
     }
   }

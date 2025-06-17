@@ -19,3 +19,4 @@ String? validaCategoria(String? categoria, List<String> categorias) {
     return validaCategoria(categoria, categorias);
   }
 }
+

@@ -1,9 +1,7 @@
 import 'dart:io';
 
 void main() {
-  // Lista de operações válidas
   List<String> operacoes = ['deposito', 'retirada', 'transferencia', 'pagamento'];
-  // Variável para armazenar a operação escolhida
   String? operacao;
 
   operacao = validaOperacao(operacao, operacoes);
@@ -19,21 +17,11 @@ double? validaValor(double? valor) {
   print('Digite o valor da operação:');
   valor = double.tryParse(stdin.readLineSync()!);
 
-<<<<<<< HEAD
-void realizarDeposito(String? operacao) {
-  operacao = stdin.readLineSync();
-
-  if (operacao == null) {
-    print("Tente novamente!!!");
-    realizarDeposito(operacao); 
-    return;
-=======
-  if (valor == null) {
+  if (valor == null || valor <= 0) {
     print('Valor inválido. Tente novamente.');
     return validaValor(valor);
   } else {
     return valor;
->>>>>>> f6350385f8d1765b1526c7ee200196bb739651c6
   }
 }
 

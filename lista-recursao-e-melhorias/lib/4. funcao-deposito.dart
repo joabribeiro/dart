@@ -13,15 +13,15 @@ void main() {
   print('Operação escolhida: $operacao, Valor: $valor');
 }
 
-double? validaValor(double? valor) {
+double? validaValor(double? valorDigitado) {
   print('Digite o valor da operação:');
-  valor = double.tryParse(stdin.readLineSync()!);
+  valorDigitado = double.tryParse(stdin.readLineSync()!);
 
-  if (valor == null || valor <= 0) {
+  if (valorDigitado == null || valorDigitado <= 0) {
     print('Valor inválido. Tente novamente.');
-    return validaValor(valor);
+    return validaValor(valorDigitado);
   } else {
-    return valor;
+    return valorDigitado;
   }
 }
 

@@ -4,7 +4,7 @@ void main() {
   //chamada da função;
   solicitarNumero();
 }
-//// Função que solicita um número ao usuário e retorna o mês correspondente
+//// Função que solicita um número ao usuário, e retorna o mês correspondente
 // Se o número for inválido, solicita novamente até que um número válido seja fornecido.
 void solicitarNumero() {
   print('Digite um número de 1 a 12 para saber o mês correspondente:');

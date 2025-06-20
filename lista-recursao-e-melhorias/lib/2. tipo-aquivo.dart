@@ -9,16 +9,16 @@ void main() {
   print("Tipo válido: $tipoArquivo");
 }
 
-String? validarArquivo(String? tipoArquivo, List<String> listaArquivo) {
+String? validarArquivo(String? tipoDigitado, List<String> listaArquivo) {
   print(
     "Qual tipo de arquivo gostaria de enviar. Ex: pdf, jpg, png, docx... ?",
   );
 
-  tipoArquivo = stdin.readLineSync();
-  if (listaArquivo.contains(tipoArquivo)) {
-    return tipoArquivo;
+  tipoDigitado = stdin.readLineSync();
+  if (listaArquivo.contains(tipoDigitado)) {
+    return tipoDigitado;
   } else {
     print("Arquivo invláido. Tente novamente.");
-    return validarArquivo(tipoArquivo, listaArquivo);
+    return validarArquivo(tipoDigitado, listaArquivo);
   }
 }

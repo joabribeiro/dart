@@ -9,14 +9,13 @@ void main() {
   print('Categoria válida: $categoria');
 }
 
-String? validaCategoria(String? categoria, List<String> categorias) {
+String? validaCategoria(String? categoriaDigitada, List<String> categorias) {
   print('Digite a categoria do produto (eletronicos, alimentos, vestuario, livros):');
-  categoria = stdin.readLineSync();
-  if (categorias.contains(categoria)) {
-    return categoria;
+  categoriaDigitada = stdin.readLineSync();
+  if (categorias.contains(categoriaDigitada)) {
+    return categoriaDigitada;
   } else {
     print('Categoria inválida. Tente novamente.');
-    return validaCategoria(categoria, categorias);
+    return validaCategoria(categoriaDigitada, categorias);
   }
 }
-

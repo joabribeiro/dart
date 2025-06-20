@@ -1,16 +1,25 @@
 import 'dart:io';
 
 void main() {
+  // Lista de operações válidas
+  List<String> operacoes = ['deposito', 'retirada', 'transferencia', 'pagamento'];
+  // Variável para armazenar a operação escolhida
+  String? operacao;
 
-  List<String> operacoes = ["deposito", "retirada", "trasnferencia", "pagamento"];
-  print("Digite uma operação(deposito, retirada, transferencia, pagamento):");
+  operacao = validaOperacao(operacao, operacoes);
 
-  // Chamada da função de depósito
-  realizarDeposito(operacao);
+  double? valor;
+
+  valor = validaValor(valor);
+
+  print('Operação escolhida: $operacao, Valor: $valor');
 }
 
-String? operacao;
+double? validaValor(double? valor) {
+  print('Digite o valor da operação:');
+  valor = double.tryParse(stdin.readLineSync()!);
 
+<<<<<<< HEAD
 void realizarDeposito(String? operacao) {
   operacao = stdin.readLineSync();
 
@@ -18,17 +27,24 @@ void realizarDeposito(String? operacao) {
     print("Tente novamente!!!");
     realizarDeposito(operacao); 
     return;
+=======
+  if (valor == null) {
+    print('Valor inválido. Tente novamente.');
+    return validaValor(valor);
+  } else {
+    return valor;
+>>>>>>> f6350385f8d1765b1526c7ee200196bb739651c6
   }
 }
 
-// Digite uma operação (deposito, retirada, transferencia, pagamento):
-// operação inválida que não existe na lista!
-// Operação inválida. Tente novamente.
-// Digite uma operação (deposito, retirada, transferencia, pagamento):
-// aaaabbbbb
-// Operação inválida. Tente novamente.
-// Digite uma operação (deposito, retirada, transferencia, pagamento):    
-// pagamento
-// Digite o valor da operação:
-// 500
-// Operação escolhida: pagamento, Valor: 500.0
+String? validaOperacao(String? operacao, List<String> operacoes) {
+  print('Digite uma operação (deposito, retirada, transferencia, pagamento):');
+  operacao = stdin.readLineSync();
+
+  if (operacoes.contains(operacao)) {
+    return operacao;
+  } else {
+    print('Operação inválida. Tente novamente.');
+    return validaOperacao(operacao, operacoes);
+  }
+}

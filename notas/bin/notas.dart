@@ -2,11 +2,7 @@ import 'dart:io';
 
 void main() {
   List<String> notas = <String>[];
-  getComando();
-  adicionaNota(notas);
-  adicionaNota(notas);
-  adicionaNota(notas);
-  listarNotas(notas);
+  menu(notas);
 }
 
 /// get comando que retorna o comando digitado pelo usuário
@@ -44,4 +40,32 @@ void listarNotas(List<String> notas) {
   for(var i=0; i < notas.length; i++) {
     print(notas[i]);
   }
+}
+
+void menu(List<String> notas) {
+  cabecalho();
+  print("");
+  String comando = getComando();
+  print("");
+
+  switch(comando) {
+    case "1": 
+    adicionaNota(notas);
+    menu(notas);
+
+    case '2':
+    listarNotas(notas);
+    menu(notas);
+
+    case '3':
+    print("Até breve...");
+  }
+}
+
+void cabecalho() {
+  print("  _  _     _           ");
+  print(" | | |___| |_ __ _ ___");
+  print(" | .` / _   _/ _` (_-<");
+  print(" |_|____/____,_/__/");
+  print("                       ");
 }
